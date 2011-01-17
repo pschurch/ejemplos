@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  rut: MyString
+  digit: MyString
+  capital: 1
+  honorarios: 1
+  gastos_envio: 1
+  total: 1
+  cliente_id: 1
+  forma_pago_id: 1
+
+two:
+  rut: MyString
+  digit: MyString
+  capital: 1
+  honorarios: 1
+  gastos_envio: 1
+  total: 1
+  cliente_id: 1
+  forma_pago_id: 1

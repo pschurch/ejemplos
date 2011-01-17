@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rut:</b>
+  <%= @ticket.rut %> - <%= @ticket.digit %>
+</p>
+<p>
+  <b>Capital:</b>
+  <%= @ticket.capital %>
+</p>
+<p>
+  <b>Honorarios:</b>
+  <%= @ticket.honorarios %>
+</p>
+<p>
+  <b>Gastos envio:</b>
+  <%= @ticket.gastos_envio %>
+</p>
+<p>
+  <b>Total:</b>
+  <%= @ticket.total %>
+</p>
+
+<%= link_to 'Editar', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>

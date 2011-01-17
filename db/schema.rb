@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117183000) do
+ActiveRecord::Schema.define(:version => 20110117203405) do
 
   create_table "alumnos", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(:version => 20110117183000) do
     t.datetime "updated_at"
   end
 
+  create_table "clientes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "comments", :force => true do |t|
     t.integer  "article_id"
     t.string   "author"
@@ -65,6 +71,12 @@ ActiveRecord::Schema.define(:version => 20110117183000) do
 
   add_index "cursos", ["asignatura_id"], :name => "index_cursos_on_asignatura_id"
   add_index "cursos", ["profesor_id"], :name => "index_cursos_on_profesor_id"
+
+  create_table "forma_pagos", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "mallas", :force => true do |t|
     t.integer  "alumno_id"
@@ -95,6 +107,19 @@ ActiveRecord::Schema.define(:version => 20110117183000) do
   create_table "profesors", :force => true do |t|
     t.string   "name"
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.string   "rut"
+    t.string   "digit"
+    t.integer  "capital"
+    t.integer  "honorarios"
+    t.integer  "gastos_envio"
+    t.integer  "total"
+    t.integer  "cliente_id"
+    t.integer  "forma_pago_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

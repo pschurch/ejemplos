@@ -1,4 +1,10 @@
 Ejemplos::Application.routes.draw do
+  resources :forma_pagos
+
+  resources :clientes
+
+  resources :tickets
+
   resources :alumnos
 
   resources :asignaturas

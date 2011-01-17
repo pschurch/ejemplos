@@ -1,0 +1,23 @@
+<h1>Listing forma_pagos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @forma_pagos.each do |forma_pago| %>
+  <tr>
+    <td><%= forma_pago.name %></td>
+    <td><%= link_to 'Show', forma_pago %></td>
+    <td><%= link_to 'Edit', edit_forma_pago_path(forma_pago) %></td>
+    <td><%= link_to 'Destroy', forma_pago, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Forma pago', new_forma_pago_path %>

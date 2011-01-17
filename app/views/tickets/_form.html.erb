@@ -1,0 +1,39 @@
+<%= form_for(@ticket) do |f| %>
+  <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% @ticket.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rut %><br />
+    <%= f.text_field :rut, :size => 10%> - <%= f.text_field :digit, :size => 1 %>
+  </div>
+  <div class="field">
+    <%= f.label :capital %><br />
+    <%= f.text_field :capital %>
+  </div>
+  <div class="field">
+    <%= f.label :honorarios %><br />
+    <%= f.text_field :honorarios %>
+  </div>
+  <div class="field">
+    <%= f.label :gastos_envio %><br />
+    <%= f.text_field :gastos_envio %>
+  </div>
+  <p>
+  <div class="field">
+    <%= f.label :total %><br />
+    <%= f.text_field :total %>
+  </div>
+  <p>
+  <div class="actions">
+    <%= f.submit "Grabar"%>
+  </div>
+<% end %>

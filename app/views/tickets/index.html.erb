@@ -1,0 +1,31 @@
+<h1>Listing tickets</h1>
+
+<table class="datos">
+  <tr>
+    <th>Rut</th>
+    <th>Capital</th>
+    <th>Honorarios</th>
+    <th>Gastos Envio</th>
+    <th>Total</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tickets.each do |ticket| %>
+  <tr>
+    <td><%= ticket.rut %>-<%= ticket.digit %></td>
+    <td><%= ticket.capital %></td>
+    <td><%= ticket.honorarios %></td>
+    <td><%= ticket.gastos_envio %></td>
+    <td><%= ticket.total %></td>
+    <td><%= link_to 'Show', ticket %></td>
+    <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+    <td><%= link_to 'Destroy', ticket, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ticket', new_ticket_path %>
