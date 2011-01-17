@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  rut: MyString
+  digito: MyString
+  edad: 1
+  email: MyString
+  date_nac: 2011-01-17
+  sueldo: 1
+  sexo: false
+  direccion: MyText
+  familia: MyString
+
+two:
+  nombre: MyString
+  rut: MyString
+  digito: MyString
+  edad: 1
+  email: MyString
+  date_nac: 2011-01-17
+  sueldo: 1
+  sexo: false
+  direccion: MyText
+  familia: MyString

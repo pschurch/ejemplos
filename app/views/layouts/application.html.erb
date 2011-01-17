@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= titulos %></title>
+  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag 'estilos', :media => 'screen' %>
+</head>
+<body>
+  <%= yield %>
+
+<p><hr></p>
+<%= link_to 'Home', :controller => "home", :action => "index" %>
+
+</body>
+</html>
+

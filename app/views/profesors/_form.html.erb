@@ -1,0 +1,36 @@
+<%= form_for(@profesor) do |f| %>
+  <% if @profesor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profesor.errors.count, "error") %> prohibited this profesor from being saved:</h2>
+
+      <ul>
+      <% @profesor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+   Asignaturas:   
+  </div>
+  <% for asignatura in Asignatura.find(:all) %>
+    <div>
+      <%= check_box_tag "profesor[asignatura_ids][]", asignatura.id, @profesor.asignaturas.include?(asignatura) %>
+      <%= asignatura.name %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

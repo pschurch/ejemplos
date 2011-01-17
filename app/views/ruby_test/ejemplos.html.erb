@@ -1,0 +1,48 @@
+<h3>Hora</h3>
+El Time es: <%= Time.now %><br>
+Día:  <%= Time.now.day  %><br>
+Mes: <%= Time.now.month  %><br>
+Año: <%= Time.now.year  %><br>
+Hora: <%= Time.now.hour %><br>
+Minuto: <%= Time.now.min %><br>
+Segundo: <%= Time.now.sec %><br>
+Primer día de la semana: <%= Time.now.wday %><br>
+Día del año: <%= Time.now.yday %><br>
+Nombre completo del mes: <%= Time.now.strftime("%B") %><br>
+Nombre abreviado del mes: <%= Time.now.strftime("%b") %><br>
+Nombre del dia de la semana: <%= Time.now.strftime("%A") %><br>
+Nombre abrev. de la semana: <%= Time.now.strftime("%a") %><br>
+AM o PM: <%= Time.now.strftime("%p") %><br>
+<p>
+La Fecha de hoy:  <%= Time.now.day %> de <%= Time.now.strftime("%b") %> de <%= Time.now.year %><br>
+La Hora: <%= Time.now.hour %>:<%= Time.now.min %> hrs.
+
+
+<h3>Numeros Aleatorios</h3>
+Estos son cinco numeros aleatorios:<br>
+    <% 5.times do %>
+      <%= rand 5 %>
+    <% end %>
+
+<h3>Pluralizaciones</h3>
+1 home: <%= pluralize(1, "home") %><br>
+3 home: <%= pluralize(3, "home") %><p>
+1 woman: <%= pluralize(1, "woman") %><br>
+5 woman: <%= pluralize(5, "woman") %><br>
+
+
+<h3>Hacia adelante y hacia atrás</h3>
+1 año desde ahora: <%= 1.year.from_now %><br>
+10 semanas atrás: <%= 10.weeks.ago %><br>
+2 horas desde ahora: <%= 2.hour.from_now %>
+
+
+<h3>Mediciones</h3>
+1.kilobyte: <%= 1.kilobyte %><br>
+5.megabytes: <%= 5.megabytes %>
+
+
+<h3>Pasar a Hexadecimal</h3>
+10: <%= 10.to_s(16) %><br>             
+255: <%= 255.to_s(16) %>                 
+

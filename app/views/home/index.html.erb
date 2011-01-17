@@ -1,0 +1,58 @@
+<h1>Home - Ejemplos</h1>
+<ul>
+  <li><%= link_to 'Hola Mundo', :controller => "prueba", :action => "saludar" %></li>
+  <li><%= link_to 'Ejemplos con Ruby', :controller => "ruby_test", :action => "ejemplos" %></li>
+  <li> Estandarización del Título de Varias Páginas: 
+     <%= link_to 'Contacto', contacto_path %> |
+     <%= link_to 'Datos', datos_path %> |
+     <%= link_to 'Ayuda', ayuda_path %>
+  </li>
+</ul>
+<p></p>
+<ul>
+  <li><%= link_to "Validaciones y Formatos", usuarios_path %> - (Listado de Usuarios)</li>
+  <li>Paginación con will_page: 
+    <%= link_to "Simple", paginacion_path %> |
+    <%= link_to "Con parametros", paginacion_prm_path %>
+  </li> 
+  <li> Despliegue de datos: 
+     <%= link_to 'Listado de Articles', articles_path %> |
+     <%= link_to 'Ocultos', :controller => "articles", :action => 'index', :hidden => 1 %> |
+     <%= link_to 'Visibles', :controller => "articles", :action => 'index', :hidden => 0 %> 
+  </li>
+</ul>
+<p></p>
+<ul>
+  <li><%= link_to 'Categorias (Articulos y sus correspondientes Comentarios)', comments_path %> - (Listado de Comentarios)</li>
+  <li><%= link_to 'Consultas a la Base de Datos', :controller => "articles", :action => "list" %> - (Listados varios de Articulos)
+  </li>
+  <li><%= link_to "Ordenamiento de Columnas", productos_path %> - (Listado de Productos)</li>
+</ul>
+<p></p>
+<ul>
+  <li>
+  Relacion Muchos-a-Muchos (HABTM): 
+     <%= link_to "Listado de Categories", categories_path %> | 
+     <%= link_to "Listado de Products", products_path %>
+ </li>
+<li>
+  Relacion Muchos-a-Muchos (has_may :trought): 
+     <%= link_to "Listado de Profesores", profesors_path %> | 
+     <%= link_to "Listado de Asignaturas", asignaturas_path %> | 
+     <%= link_to 'Listados de Cursos', :controller => "profesors", :action => "cursos" %> 
+ </li> 
+ <li>
+   Relacion Muchos-a-Muchos con tres tablas: 
+     <%= link_to "Listado de Alumnos", alumnos_path %> 
+ </li> 
+</ul>
+<p></p>
+<ul>
+ <li>
+  Búsquedas: 
+     <%= link_to "Resultado en la misma página", busqueda_path %> | 
+     <%= link_to "Resultado en otra página" , :controller => "usuarios", :action => "buscador" %>
+</li> 
+ 
+</ul>
+

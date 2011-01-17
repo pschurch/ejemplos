@@ -1,0 +1,23 @@
+<h1>Listing asignaturas</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @asignaturas.each do |asignatura| %>
+  <tr>
+    <td><%= asignatura.name %></td>
+    <td><%= link_to 'Show', asignatura %></td>
+    <td><%= link_to 'Edit', edit_asignatura_path(asignatura) %></td>
+    <td><%= link_to 'Destroy', asignatura, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Asignatura', new_asignatura_path %>

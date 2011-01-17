@@ -1,0 +1,35 @@
+<%= form_for(@alumno) do |f| %>
+  <% if @alumno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alumno.errors.count, "error") %> prohibited this alumno from being saved:</h2>
+
+      <ul>
+      <% @alumno.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+   Cursos:   
+  </div>
+  <% for curso in Curso.all %>
+    <div>
+      <%= check_box_tag "alumno[curso_ids][]", curso.id, @alumno.cursos.include?(curso) %>
+       <%= curso.asignatura.name %> - <%= curso.profesor.name %>
+    </div>
+  <% end %>
+  <p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

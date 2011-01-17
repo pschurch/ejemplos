@@ -1,0 +1,8 @@
+<h1>Listado de Cursos</h1>
+
+  <% for curso in Curso.find(:all) %>
+    <div>
+      <%= curso.profesor.name %> - <%= curso.asignatura.name %>
+    </div>
+  <% end %>
+

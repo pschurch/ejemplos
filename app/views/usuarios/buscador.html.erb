@@ -1,0 +1,9 @@
+<h1>Buscador de Usuarios</h1>
+
+<% form_tag({:controller => :usuarios, :action => :resultado}, :method => :get) do %>
+ <p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Buscar", :nombre => 'nil' %>
+ </p>
+<% end %>
+

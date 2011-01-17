@@ -1,0 +1,43 @@
+<h1>Listado3 de Usuarios (Paginación con Parámetros)</h1>
+
+<table class="listado">
+  <tr>
+    <th>Nombre</th>
+    <th>Rut</th>
+    <th>Edad</th>
+    <th>Email</th>
+    <th>Fecha Nac</th>
+    <th>Sexo</th>
+    <th>Sueldo</th>
+    <th>Creado</th>
+    <th>Actualizado</th>
+    <th colspan=3></th>
+  </tr>
+  <% @usuarios.each do |usuario| %>
+  <tr>
+    <td><%= usuario.nombre %></td>
+    <td><%= usuario.rut %>-<%= usuario.digito %></td>
+    <td><%= usuario.edad %></td>
+    <td><%= usuario.email %></td>
+    <td><%= if !usuario.date_nac.nil? 
+           usuario.date_nac.strftime("%d/%m/%Y")
+        end %></td>
+    <td><%= case usuario.sexo 
+          when true 
+                 "F"
+          when false 
+                 "M"
+         end %></td>
+    <td><%= usuario.sueldo %></td>
+    <td><%= usuario.created_at.strftime("%d-%m-%Y %H-%M") %></td>
+    <td><%= usuario.updated_at.strftime("%l:%M %p, %B %d, %Y") %></td>
+    <td><%= link_to 'Show', usuario %></td>
+    <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
+    <td><%= link_to 'Destroy', usuario, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @usuarios%>
+<br>
+<%= link_to 'Crear Nuevo Usuario', new_usuario_path %>
+

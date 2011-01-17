@@ -1,0 +1,28 @@
+<h1>Productos en Existencia</h1>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><%= link_to "Nombre", :sort => "nombre" %></th>
+    <th><%= link_to "Marca", :sort => "marca" %></th>
+    <th><%= link_to "Precio", :sort => "precio" %></th>
+    <th>Descripcion</th>
+    <th colspan=2></th>
+  </tr>
+
+<% @productos.each do |producto| %>
+  <tr>
+    <td><%= producto.nombre %></td>
+    <td><%= producto.marca %></td>
+    <td><%= number_to_currency(producto.precio, :precision => 0, :delimiter => ".") %></td>
+    <td><%= producto.descripcion %></td>
+    <td><%= link_to image_tag("wiki_edit.png"), edit_producto_path(producto) %></td>
+    <td><%= link_to image_tag("delete.png"), producto, :confirm => 'Are you sure?', :method => :delete %></td>
+
+
+  </tr>
+<% end %>
+</table>
+<br>
+<%= link_to 'Nuevo Producto', new_producto_path %> |
+<%= link_to 'Orden Asc/Desc', :controller => 'productos', :action => 'index2' %>
+
+

@@ -1,0 +1,27 @@
+<h1>Productos en Existencia</h1>
+
+<table border="1" cellpadding="5" class="pretty">
+  <tr>
+    <th><%= sortable "nombre" %></th>
+    <th><%= sortable "marca" %></th>
+    <th><%= sortable "precio" %></th>
+    <th>Descripcion</th>
+    <th colspan=2></th>
+  </tr>
+
+  <% @productos2.each do |producto| %>
+  <tr>
+    <td><%= producto.nombre %></td>
+    <td><%= producto.marca %></td>
+    <td><%= number_to_currency(producto.precio, :precision => 0, :delimiter => ".") %></td>
+    <td><%= producto.descripcion %></td>
+    <td><%= link_to 'Ver', producto %></td>
+    <td><%= link_to 'Eliminar', producto, :confirm => 'Esta seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+<%= link_to 'Nuevo Producto', new_producto_path %> |
+<%= link_to 'Orden Ascendente', productos_path %>
+

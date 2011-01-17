@@ -1,0 +1,67 @@
+<h1>Listados Varios de Articulos</h1>
+
+<h3>El Artículo publicado más recientemente</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Published at</th>
+    <th>Hidden</th>
+  </tr>
+  <tr>
+    <td><%= @list1.name %></td>
+    <td><%= @list1.published_at %></td>
+    <td><%= @list1.hidden %></td>
+  </tr>
+</table>
+
+<hr>
+<h3>Los tres artículos publicados más recientemente</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Published at</th>
+    <th>Hidden</th>
+  </tr>
+<% @list2.each do |a| %>
+  <tr>
+    <td><%= a.name %></td>
+    <td><%= a.published_at %></td>
+    <td><%= a.hidden %></td>
+  </tr>
+<% end %>
+</table>
+
+<hr>
+<h3>Todos los artículos que tienen una fecha publicada anterior a la fecha actual y sus comentarios asociados</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Published at</th>
+    <th>Hidden</th>
+  </tr>
+<% @list3.each do |a| %>
+  <tr>
+    <td><%= a.name %></td>
+    <td><%= a.published_at %></td>
+    <td><%= a.hidden %></td>
+  </tr>
+<% end %>
+</table>
+
+<hr>
+<h3>Todos los artículos que tienen una fecha publicada anterior a la fecha actual, no están ocultos y ordenados ascendentemente por nombre</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Published at</th>
+    <th>Hidden</th>
+  </tr>
+<% @list4.each do |a| %>
+  <tr>
+    <td><%= a.name %></td>
+    <td><%= a.published_at %></td>
+    <td><%= a.hidden %></td>
+  </tr>
+<% end %>
+</table>
+

@@ -1,0 +1,30 @@
+html {font-size:100.01%;}
+body {font-size:76%;color:#222;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+h1, h2, h3, h4, {font-weight:normal;color:#111;}
+
+table.datos {
+  border: 2px solid rgb(229,179,90);
+  border-spacing: 5px;
+}
+table.listado {
+  border-collapse: collapse;	
+}
+table.listado th, table.listado td { 
+  border: 1px solid rgb(229,179,90); 
+  background: white;
+}
+
+.pretty th .current {  
+  padding-right: 12px;  
+  background-repeat: no-repeat;  
+  background-position: right center;  
+}  
+.pretty th .asc {   
+  background-image: url(/images/up_arrow.gif);   
+}  
+  
+.pretty th .desc {   
+  background-image: url(/images/down_arrow.gif);   
+}  
+
+img {border:0}

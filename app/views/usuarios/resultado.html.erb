@@ -1,0 +1,23 @@
+<h1>Resultado de la Búsqueda</h1>
+<p>
+
+<table border="1" cellspacing="0" cellpadding="3">
+  <tr>
+    <th>Nombre</th>
+    <th>Rut</th>
+    <th>Edad</th>
+    <th>Email</th>
+  </tr>
+  <% @resp.each do |usuario| %>
+  <tr>
+    <td><%= usuario.nombre %></td>
+    <td><%= usuario.rut %>-<%= usuario.digito %></td>
+    <td><%= usuario.edad %></td>
+    <td><%= usuario.email %></td>
+  </tr>
+  <% end %>
+</table> 	
+
+<p></p>
+Volver a <%= link_to "buscador" , :controller => "usuarios", :action => "buscador" %>	
+

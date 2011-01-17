@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  profesor_id: 1
+  asignatura_id: 1
+
+two:
+  profesor_id: 1
+  asignatura_id: 1

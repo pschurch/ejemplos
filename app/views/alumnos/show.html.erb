@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @alumno.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @alumno.email %>
+</p>
+
+<p>
+  <b>Cursos:</b>
+  <ul>
+    <% @alumno.curso_ids.each do |a| %>
+      <% @curso_list.each do |curso| %>
+        <% if a == curso.id %> 
+          <li><%= curso.asignatura.name %> - <%= curso.profesor.name %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+  <br>
+</p>
+
+<%= link_to 'Edit', edit_alumno_path(@alumno) %> |
+<%= link_to 'Back', alumnos_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @profesor.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @profesor.email %>
+</p>
+
+<p>
+  <b>Asignaturas:</b>
+  <ul>
+    <% @profesor.asignatura_ids.each do |p| %>
+      <% @asignatura_list.each do |asg| %>
+        <% if p == asg.id %> 
+          <li><%= asg.name %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+  <br>
+</p>
+
+
+<%= link_to 'Edit', edit_profesor_path(@profesor) %> |
+<%= link_to 'Back', profesors_path %>

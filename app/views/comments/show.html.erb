@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<% unless @comment.article.nil? %>
+<p>
+  <b>Article:</b>
+  <%= link_to @comment.article.name, @comment.article %>
+</p>
+<% end %>
+<p>
+  <b>Author:</b>
+  <%= @comment.author %>
+</p>
+<p>
+  <b>Desc:</b>
+  <%= @comment.desc %>
+</p>
+<p>
+  <b>Published at:</b>
+  <%= @comment.published_at %>
+</p>
+<p>
+  <b>Hidden:</b>
+  <%= @comment.hidden %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>
+

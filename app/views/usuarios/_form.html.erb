@@ -1,0 +1,58 @@
+<%= form_for(@usuario) do |f| %>
+  <% if @usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+      <ul>
+      <% @usuario.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table class="datos">
+  <tr>
+    <td>Nombre:</td>
+    <td colspan=3>Rut:</td>
+  </tr>
+  <tr>  
+    <td><%= f.text_field :nombre %></td>
+    <td><%= f.text_field :rut, :size => "8" %></td>
+    <td> - </td>
+    <td><%= f.text_field :digito, :size => "1" %></td>
+  </tr>
+  <tr>
+    <td>E-mail:</td>
+    <td>Edad: </td>
+  </tr>
+  <tr>
+    <td><%= f.text_field :email %></td>
+    <td><%= f.text_field :edad, :size => "2" %></td>
+  </tr>
+  <tr>
+    <td>Fecha de Nacimiento:</td>
+    <td>Sueldo:</td>
+  </tr>
+  <tr>
+    <td><%= f.date_select :date_nac %></td>
+    <td><%= f.text_field :sueldo, :size => "8" %></td>
+  </tr>
+  <tr>
+    <td>Familia:</td>
+    <td>Sexo:</td>
+  </tr>
+  <tr>
+    <td><%= f.text_field :familia %></td>
+    <td><%= f.radio_button :sexo, true, %>F 
+        <%= f.radio_button :sexo, false, %>M </td>
+  </tr>  
+  <tr>
+    <td>Dirección</td>
+  </tr>
+  <tr>
+    <td colspan=4><%= f.text_area :direccion, :size => "60x2" %></td>
+  </tr>
+</table>
+<p><%= f.submit "Crear Usuario" %></p>
+<% end %>
+
